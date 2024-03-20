@@ -102,7 +102,7 @@ public class ItemServices {
 	public ResponseEntity<Object> removeFromBasket(int itemId) {
 		Optional<Item> toRemoveFromBasket = this.repo.findById(itemId);
 		if (toRemoveFromBasket.isEmpty()) {
-			return new ResponseEntity<Object>("This item doesn' exist", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Object>("This item doesn't exist", HttpStatus.NOT_FOUND);
 		}
 
 		Item exists = toRemoveFromBasket.get();
