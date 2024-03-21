@@ -66,6 +66,9 @@ public class ItemServices {
 		if (itemDetails.getBasket() != null) {
 			exists.setBasket(itemDetails.getBasket());
 		}
+		if (itemDetails.getWishlist() != null) {
+			exists.setWishlist(itemDetails.getWishlist());
+		}
 		// saves new data inside the fields and returns new data
 		Item updated = this.repo.save(exists);
 		return ResponseEntity.ok(updated);

@@ -4,7 +4,7 @@ import com.Inc.Project1.BE.domain.Item;
 
 public class ItemDTO {
 
-	private Integer itemId;
+	private int itemId;
 
 	private String itemName;
 
@@ -22,11 +22,11 @@ public class ItemDTO {
 		super();
 	}
 
-	public Integer getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
 
-	public void setItemId(Integer itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 
