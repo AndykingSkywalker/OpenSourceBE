@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,10 +45,5 @@ public class WishlistController {
 	@GetMapping("/get/{id}")
 	public ResponseEntity<Wishlist> getWishlist(@PathVariable Integer id) {
 		return this.service.getWishlist(id);
-	}
-
-	@PatchMapping("add/{itemId}/{wishlistId}")
-	public ResponseEntity<Object> addToBasket(@PathVariable int itemId, @PathVariable int basketId) {
-		return this.service.addToBasket(itemId, basketId);
 	}
 }
