@@ -22,6 +22,10 @@ public class Item {
 	@ManyToOne
 	private Basket basket;
 
+	@JsonBackReference(value = "for-wishlist")
+	@ManyToOne
+	private Wishlist wishlist;
+
 	public Item() {
 		super();
 	}
@@ -56,6 +60,14 @@ public class Item {
 
 	public void setBasket(Basket basket) {
 		this.basket = basket;
+	}
+
+	public Wishlist getWishlist() {
+		return wishlist;
+	}
+
+	public void setWishlist(Wishlist wishlist) {
+		this.wishlist = wishlist;
 	}
 
 }

@@ -66,6 +66,9 @@ public class ItemServices {
 		if (itemDetails.getBasket() != null) {
 			exists.setBasket(itemDetails.getBasket());
 		}
+		if (itemDetails.getWishlist() != null) {
+			exists.setWishlist(itemDetails.getWishlist());
+		}
 		// saves new data inside the fields and returns new data
 		Item updated = this.repo.save(exists);
 		return ResponseEntity.ok(updated);
@@ -102,7 +105,7 @@ public class ItemServices {
 	public ResponseEntity<Object> removeFromBasket(int itemId) {
 		Optional<Item> toRemoveFromBasket = this.repo.findById(itemId);
 		if (toRemoveFromBasket.isEmpty()) {
-			return new ResponseEntity<Object>("This item doesn' exist", HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Object>("This item doesn't exist", HttpStatus.NOT_FOUND);
 		}
 
 		Item exists = toRemoveFromBasket.get();
